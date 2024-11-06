@@ -153,4 +153,34 @@ network bind9_subnet declared as external, but could not be found
 ~~~
 
 7.-Inicio de Contenedor Cliente e Instalación de Git y Bind
+~~~
+docker run -it --rm --privileged ubuntu:latest bash
+
+root@b7f5961db912:/# echo "nameserver 8.8.8.8" > /etc/resolv.conf
+root@5bf5c2e5f5b8:/# apt update
+root@5bf5c2e5f5b8:/# apt install dnsutils -y 
+
+root@5bf5c2e5f5b8:/# dig google
+
+; <<>> DiG 9.18.28-0ubuntu0.24.04.1-Ubuntu <<>> google
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1405
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1220
+; COOKIE: 40540368dc4427e0eb832e89672bc672d14e22d61f683d54 (good)
+;; QUESTION SECTION:
+;google.				IN	A
+
+;; AUTHORITY SECTION:
+google.			5	IN	SOA	ns-tld1.charlestonroadregistry.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 900
+
+;; Query time: 10 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8) (UDP)
+;; WHEN: Wed Nov 06 19:41:38 UTC 2024
+;; MSG SIZE  rcvd: 161
+
+
 
