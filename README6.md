@@ -6,6 +6,7 @@
 2.-Creo un contenedor con ducker run -it ubuntu, conecto el contenedor a la red con docker network connect bind9_subnet ubuntu.
 
 3.-Con docker network ispect bind9_subnet nos proporciona informacion sobre la red:
+~~~
  docker network inspect bind9_subnet
 [
     {
@@ -37,9 +38,9 @@
         "Labels": {}
     }
 ]
-
+~~~
 4.- Fichero bind9_subnet.json
-
+~~~
 sri@sri-VirtualBox:~/docker/practica-3/bind9-container/bind9-project$ cat bind9_subnet.json 
 [
     {
@@ -71,7 +72,7 @@ sri@sri-VirtualBox:~/docker/practica-3/bind9-container/bind9-project$ cat bind9_
         "Labels": {}
     }
 ]
-
+~~~
 
 5.- Ficheros de configuración de Docker
 
