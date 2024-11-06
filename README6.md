@@ -77,6 +77,7 @@ sri@sri-VirtualBox:~/docker/practica-3/bind9-container/bind9-project$ cat bind9_
 5.- Ficheros de configuración de Docker
 
   5.1.-Configuración de zona local
+ ~~~
   sri@sri-VirtualBox:~/Docker/config$ cat ~/Docker/config/named.conf.local
 zone "asircastelao.int" {
 	type master;
@@ -85,8 +86,9 @@ zone "asircastelao.int" {
 		any;
 	};
 };
-
+~~~
   5.2.-Zonas por defecto
+~~~
 cat ~/Docker/config/named.conf.default-zones
 // prime the server with knowledge of the root servers
 zone "." {
@@ -121,9 +123,9 @@ zone "255.in-addr.arpa" {
   cat ~/Docker/config/named.conf
 include "/etc/bind/named.conf.options";
 include "/etc/bind/named.conf.local";
-
+~~~
 5.4.- Archivo db.127
-
+~~~
 cat ~/Docker/config/db.127
     604800
 @       IN      SOA     localhost. root.localhost. (
@@ -136,9 +138,9 @@ cat ~/Docker/config/db.127
 @       IN      NS      localhost.
 1       IN      PTR     localhost.
 
-
+~~~
 6.-Iniciar docker-compose
-
+~~~
 sri@sri-VirtualBox:~/docker/practica-3/bind9-container/bind9-project$ docker-compose up -d
 [+] Running 6/6
  ✔ cliente 1 layers [⣿]      0B/0B      Pulled                         8.0s 
@@ -148,7 +150,7 @@ sri@sri-VirtualBox:~/docker/practica-3/bind9-container/bind9-project$ docker-com
    ✔ 628b314bec1f Pull complete                                        1.7s 
    ✔ d8dd8249bef1 Pull complete                                        0.5s 
 network bind9_subnet declared as external, but could not be found
-
+~~~
 
 7.-Inicio de Contenedor Cliente e Instalación de Git y Bind
 
