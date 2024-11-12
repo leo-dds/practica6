@@ -1,5 +1,4 @@
-[# practica6
-](https://github.com/leo-dds/practica6.git)
+[# practica6](https://github.com/leo-dds/practica6.git)
 
 1.-Creo la red con docker network create bind9_subnet  
 
